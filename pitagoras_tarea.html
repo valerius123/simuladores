@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Teorema de Pitagoras</title>
+
+<Script language=JavaScript>
+
+function process(){
+a=document.formp.a.value;
+b=document.formp.b.value;
+c=document.formp.c.value;
+d=document.formp.worksp.value;
+n="\n";
+p=" + ";
+m=" - ";
+s="^2";
+// alt 253
+e=" = ";
+    if(a=="a"){
+        answer=Math.sqrt((c*c)-(b*b))
+        document.formp.a.value=answer;
+        document.formp.worksp.value=d+n+a+s+p+b+s+e+c+s+n;
+        document.formp.worksp.value+=a+s+p+b+s+m+b+s+e+c+s+m+b+s+n;
+        document.formp.worksp.value+=a+s+e+(c*c)+m+(b*b)+n;
+        document.formp.worksp.value+=a+s+e+((c*c)-(b*b))+n;
+        document.formp.worksp.value+=a+e+answer;
+    }
+    if(b=="b"){
+        answer=Math.sqrt((c*c)-(a*a))
+        document.formp.b.value=answer;
+        document.formp.worksp.value=d+n+a+s+p+b+s+e+c+s+n;
+        document.formp.worksp.value+=a+s+p+b+s+m+a+s+e+c+s+m+a+s+n;
+        document.formp.worksp.value+=b+s+e+(c*c)+m+(a*a)+n;
+        document.formp.worksp.value+=b+s+e+((c*c)-(a*a))+n;
+        document.formp.worksp.value+=b+e+answer;
+    }
+    if(c=="c"){
+        answer=Math.sqrt((a*a)+(b*b))
+        document.formp.c.value=answer;
+        document.formp.worksp.value=d+n+a+s+p+b+s+e+c+s+n;
+        document.formp.worksp.value+=(a*a)+p+(b*b)+e+c+s+n;
+        document.formp.worksp.value+=answer+e+c;
+    }
+}
+ 
+// end the hide -->
+</script>
+</head>
+ 
+<body bgcolor ="white" text="#000000" link="#ff0000" vlink="#ff8000" alink="#0000ff" >
+<span id="liveclock" style="position:absolute;left:0;top:0;"></span><script language="JavaScript" type="text/javascript">
+ <!--
+
+function show5(){
+if (!document.layers&&!document.all&&!document.getElementById)
+return
+
+ var Digital=new Date()
+ var hours=Digital.getHours()
+ var minutes=Digital.getMinutes()
+ var seconds=Digital.getSeconds()
+
+var dn="PM"
+if (hours<12)
+dn="AM"
+if (hours>12)
+hours=hours-12
+if (hours==0)
+hours=12
+
+ if (minutes<=9)
+ minutes="0"+minutes
+ if (seconds<=9)
+ seconds="0"+seconds
+//change font size here to your desire
+myclock="<font size='5' face='Arial' ><b><font size='1'>Hora actual:</font></br>"+hours+":"+minutes+":"
+ +seconds+" "+dn+"</b></font>"
+if (document.layers){
+document.layers.liveclock.document.write(myclock)
+document.layers.liveclock.document.close()
+}
+else if (document.all)
+liveclock.innerHTML=myclock
+else if (document.getElementById)
+document.getElementById("liveclock").innerHTML=myclock
+setTimeout("show5()",1000)
+ }
+
+
+window.onload=show5
+ //-->
+ </script>
+
+<center> 
+<p>
+
+<br>
+
+<img src="777.png">
+
+
+<Form name=formp>
+<table cellspacing=1 cellpadding=1 border=0 >
+<tr>
+    <td colspan=3 bgcolor=#ffffff><center><font size="+1"><marquee>TEOREMA DE PITAGORAS</marquee></font></center>
+<center><font size="+2">a<sup>2</sup>+b<sup>2</sup>=c<sup>2</sup></font></center>
+</tr>
+<tr>
+    <td valign=middle><div align="right"><input size=5 name=a value="a">
+</div></td>
+    <td ><div align="center"><img src="pythag1.gif" width="65" height="84" alt="Right Triangle" border=0></div></td>
+    <td valign=middle><input size=5 name=c value="c"></td>
+</tr>
+<tr>
+    <td></td>
+    <td><center><input size=5 name=b value="b"></center></td>
+    <td></td>
+</tr>
+<tr>
+    <td colspan="3"><br>
+    <center><input type=button value=Calcular: onclick=process()>&nbsp;<font size="-1"><b>(No olvidar las unidades!)</b></font></center></td>
+</tr><tr>
+    <td colspan=3><textarea name=worksp cols=40 rows=6 value="">Checa el procedimiento: (^2='cuadrado')</textarea>
+<tr><td colspan="3"><center><input type=reset value=Limpiar></center><div align=right><font size="-2">Ing. Jos&eacute Julio Gonz&aacutelez</font></div></td>
+</tr>
+</table></center>
+</body>
+ 
+</html>
